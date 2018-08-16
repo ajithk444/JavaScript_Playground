@@ -37,3 +37,14 @@ function workingDaysBetweenDates(startDate, endDate) {
 }
 
 $('#results').html(workingDaysBetweenDates(new Date('8/16/2018'), new Date('8/18/2018')));
+
+
+
+
+
+function weeksBetweenDates(d1, d2) {
+    return Math.round((d2 - d1) / (7 * 24 * 60 * 60 * 1000));
+}
+
+
+$('#results').html(weeksBetweenDates(new Date('8/16/2018'), new Date('9/18/2018')));
