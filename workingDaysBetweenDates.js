@@ -48,3 +48,16 @@ function weeksBetweenDates(d1, d2) {
 
 
 $('#results').html(weeksBetweenDates(new Date('8/16/2018'), new Date('9/18/2018')));
+
+
+
+function monthsBetween(d1, d2) {
+    var months;
+    months = (d2.getFullYear() - d1.getFullYear()) * 12;
+    months -= d1.getMonth() + 1;
+    months += d2.getMonth();
+    return months <= 0 ? 0 : months;
+}
+
+
+$('#results').html(monthsBetween(new Date('8/16/2018'), new Date('11/18/2018')))
