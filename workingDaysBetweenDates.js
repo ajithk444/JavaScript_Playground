@@ -36,28 +36,32 @@ function workingDaysBetweenDates(startDate, endDate) {
     return days;
 }
 
-$('#results').html(workingDaysBetweenDates(new Date('8/16/2018'), new Date('8/18/2018')));
-
-
-
-
 
 function weeksBetweenDates(d1, d2) {
     return Math.round((d2 - d1) / (7 * 24 * 60 * 60 * 1000));
 }
 
-
-$('#results').html(weeksBetweenDates(new Date('8/16/2018'), new Date('9/18/2018')));
-
-
-
 function monthsBetween(d1, d2) {
     var months;
     months = (d2.getFullYear() - d1.getFullYear()) * 12;
     months -= d1.getMonth() + 1;
-    months += d2.getMonth();
-    return months <= 0 ? 0 : months;
+    months += d2.getMonth()+1;
+    return months <= 0 ? 0 : months + 1;
+}
+
+function quartersBetween(d1, d2) {
+    var months;
+    months = (d2.getFullYear() - d1.getFullYear()) * 12;
+    alert(months);
+    months -= d1.getMonth() + 1;
+    months += d2.getMonth() + 1;
+    alert(months);
+    return months <= 0 ? 0 : (months +1) /3;
 }
 
 
+
+
 $('#results').html(monthsBetween(new Date('8/16/2018'), new Date('11/18/2018')))
+
+
